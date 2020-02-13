@@ -16,3 +16,23 @@ for _ in range(int(input())):
         print("Discover")
     else:
         print("Unsupported Card")
+
+      
+
+    #Second method
+    import re
+nums = []
+for _ in range(int(input())):
+    string = input()
+    copy = re.sub(r'([\s,-]+)',r'',string)
+    if not(re.search(r'^[4-6]',string)):
+        print("Invalid")
+    elif(re.match(r'^[4-6]([0-9]{3})-?([0-9]{4})-?([0-9]{4})-?([0-9]{4})$',string)):
+        if(re.search(r'(\d)\1{3}',copy)):
+            print("Invalid")
+        else:
+            print("Valid")
+    else:
+        print("Invalid")
+    '''elif(re.match(r'^[4-6]([0-9]{3})-?([0-9]{4})-?([0-9]{4})-?([0-9]{4})',string)):
+        print("Valid")'''
